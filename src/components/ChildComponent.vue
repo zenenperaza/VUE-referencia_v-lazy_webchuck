@@ -4,20 +4,31 @@
 </div>
 </template>
 
-<script lang="ts" setup>
-import { onMounted, ref, defineExpose } from "vue";  
+<script lang="ts" >
+import { defineComponent } from "vue"
 
-const percentage = ref(0)
+export default defineComponent({
+    data(){
+        return {
+            percentage:0
+        }
 
-onMounted(() => {
-    percentage.value = 24
+    },
+
+    methods: {
+        recalculate() {
+            this.percentage = 42 
+        }
+    },
+    mounted(){
+        this.percentage = 24
+        }
 })
 
-const recalculate = ( ) => {
-    percentage.value = 42
-}
 
-defineExpose({recalculate})
+
+
+
 
 </script>
 

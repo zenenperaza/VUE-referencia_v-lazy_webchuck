@@ -3,15 +3,23 @@
 <button v-on:click="banco">Add cuenta bancaria</button>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts">
 import ChildComponent from './ChildComponent.vue';
-import { ref } from "vue";
+import { defineComponent } from "vue";
 
-const percentageComponent = ref(null)
+export default defineComponent({
+    components: {
+        ChildComponent
+    },
+    methods: {
+        banco(){
+           this.$refs.percentageComponent.recalculate()
+        }
+    }
+    
+})
 
-const banco = () => {
-    percentageComponent.value.recalculate()
-}
+
    
 </script>
 
