@@ -1,28 +1,39 @@
 <template>
-<ChildComponent ref="percentageComponent"></ChildComponent>
-<button v-on:click="banco">Add cuenta bancaria</button>
+<div> 
+    <img v-lazy="{ src: lazyOptions.src, lifecycle: lazyOptions.lifecycle, delay: lazyOptions.delay }" lazy="loading">
+</div>
 </template>
 
-<script lang="ts">
-import ChildComponent from './ChildComponent.vue';
-import { defineComponent } from "vue";
+<script lang="ts" setup>
+import { ref, VNode } from "vue";
 
-export default defineComponent({
-    components: {
-        ChildComponent
-    },
-    methods: {
-        banco(){
-           this.$refs.percentageComponent.recalculate()
+const lazyOptions = ref({
+    src: 'https://picsum.photos/2400/1800',
+    delay: 500,
+    lifecycle: {
+        loading: (ele:VNode) => {
+            console.log('cargando imagen', ele);
+            
+        },
+        error: (ele:VNode) => {
+            console.log('error en la carga', ele);
+            
+        },
+        loaded: (ele:VNode) => {
+            console.log('imagen cargada', ele) ;
+            
         }
     }
-    
 })
-
-
    
 </script>
 
+
 <style scoped>
+
+img[lazy=loading]{
+    background-color: yellow;
+    width: 500px;
+}
 
 </style>
