@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
@@ -15,4 +16,13 @@ export default defineComponent({
     HelloWorld,
   },
 });
+=======
+<ParentComponent></ParentComponent>
+</template>
+
+<script lang="ts" setup>
+import ParentComponent from '@/components/ParentComponent.vue';
+
+
+>>>>>>> d0f003e398d4347eb66463b7b89dd47fbb72cb7b
 </script>
