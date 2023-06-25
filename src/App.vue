@@ -1,12 +1,4 @@
 <template>
-<<<<<<< HEAD
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-=======
-
->>>>>>> d0f003e398d4347eb66463b7b89dd47fbb72cb7b
   <router-view/>
 </template>
 
