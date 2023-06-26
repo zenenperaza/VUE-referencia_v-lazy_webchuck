@@ -1,6 +1,6 @@
 <template>
 <div> 
-    <img v-lazy="{ src: lazyOptions.src, lifecycle: lazyOptions.lifecycle, delay: lazyOptions.delay }" lazy="loading">
+    <img v-lazy="{ src: lazyOptions.src, lifecycle: lazyOptions.lifecycle, delay: lazyOptions.delay }" lazy="loading" style="max-width: 100%; height: auto;">
 </div>
 </template>
 
